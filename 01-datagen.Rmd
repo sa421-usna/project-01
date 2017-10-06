@@ -1,0 +1,28 @@
+---
+title: "Data generation for project 1s"
+author: "Associaite Professors Phillips and Uhan"
+date: "9/17/2017"
+output: html_document
+---
+This file creates the data for Project 1.
+
+```{r}
+#libraries
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(fitdistrplus)
+
+```
+
+# Generate some sample data
+```{r}
+set.seed(2211)
+n = 900
+renege.data = data.frame(time = rgamma(n, 1.05, rate = 1/10))
+
+write.csv(renege.data, "renege-data.csv", sep=",")
+```                         
+
+
+
